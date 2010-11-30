@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		89D0F1C90F3B704E007831A7 /* Kinect */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 89D0F1D20F3B7080007831A7 /* Build configuration list for PBXAggregateTarget "Kinect" */;
+			buildPhases = (
+			);
+			dependencies = (
+				89D0F1D10F3B7062007831A7 /* PBXTargetDependency */,
+				89D0F1CF0F3B7062007831A7 /* PBXTargetDependency */,
+			);
+			name = Kinect;
+			productName = Kinect;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		16766DAA12A464050088F80B /* libfreenect.h in Headers */ = {isa = PBXBuildFile; fileRef = 16766DA912A464050088F80B /* libfreenect.h */; };
+		16766E8A12A47E800088F80B /* Kinect.h in Headers */ = {isa = PBXBuildFile; fileRef = 16766E8812A47E800088F80B /* Kinect.h */; };
+		16766E8B12A47E800088F80B /* Kinect.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16766E8912A47E800088F80B /* Kinect.mm */; };
+		16766F5E12A48EFD0088F80B /* libfreenect.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16766F5D12A48EFD0088F80B /* libfreenect.dylib */; };
+		89D0F0410F39306C007831A7 /* JavaApplicationStub in Copy Executable */ = {isa = PBXBuildFile; fileRef = 89D0F03E0F39304A007831A7 /* JavaApplicationStub */; };
+		89D0F0850F394066007831A7 /* JavaNativeFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D0F0840F394066007831A7 /* JavaNativeFoundation.framework */; };
+		89D0F16A0F3A124E007831A7 /* kinect.jar in Copy Java Resources */ = {isa = PBXBuildFile; fileRef = 89D0F15D0F3A0FF7007831A7 /* kinect.jar */; };
+		89D0F1870F3A2442007831A7 /* JavaVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D0F1860F3A2442007831A7 /* JavaVM.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89D0F1CE0F3B7062007831A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89D0F04F0F393AD9007831A7;
+			remoteInfo = "Compile Native";
+		};
+		89D0F1D00F3B7062007831A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89D0F0480F393A6F007831A7;
+			remoteInfo = "Compile Java";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		89D0F0440F393070007831A7 /* Copy Executable */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				89D0F0410F39306C007831A7 /* JavaApplicationStub in Copy Executable */,
+			);
+			name = "Copy Executable";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D0F11F0F394189007831A7 /* Copy Java Resources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 15;
+			files = (
+				89D0F16A0F3A124E007831A7 /* kinect.jar in Copy Java Resources */,
+			);
+			name = "Copy Java Resources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		16766DA912A464050088F80B /* libfreenect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libfreenect.h; sourceTree = "<group>"; };
+		16766E8812A47E800088F80B /* Kinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kinect.h; sourceTree = "<group>"; };
+		16766E8912A47E800088F80B /* Kinect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Kinect.mm; sourceTree = "<group>"; };
+		16766F5D12A48EFD0088F80B /* libfreenect.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreenect.dylib; path = usr/local/lib/fakenect/libfreenect.dylib; sourceTree = SDKROOT; };
+		167670E012A4951F0088F80B /* libkinect.jnilib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libkinect.jnilib; sourceTree = BUILT_PRODUCTS_DIR; };
+		1676718012A496820088F80B /* Kinect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		89B60E380F414DDB00C86CA9 /* Manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Manifest; path = "Library/Xcode/Project Templates/Java/JNI Application/resources/Manifest"; sourceTree = DEVELOPER_DIR; };
+		89B60E390F414E1200C86CA9 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = "Library/Xcode/Project Templates/Java/JNI Application/lib"; sourceTree = DEVELOPER_DIR; };
+		89D0F0220F392F20007831A7 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		89D0F0230F392F20007831A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89D0F0290F392F56007831A7 /* java */ = {isa = PBXFileReference; lastKnownFileType = folder; path = java; sourceTree = "<group>"; };
+		89D0F03E0F39304A007831A7 /* JavaApplicationStub */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = JavaApplicationStub; path = /System/Library/Frameworks/JavaVM.framework/Versions/A/Resources/MacOS/JavaApplicationStub; sourceTree = "<absolute>"; };
+		89D0F0840F394066007831A7 /* JavaNativeFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaNativeFoundation.framework; path = /System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaNativeFoundation.framework; sourceTree = "<absolute>"; };
+		89D0F1390F3948A9007831A7 /* make */ = {isa = PBXFileReference; lastKnownFileType = folder; path = make; sourceTree = "<group>"; };
+		89D0F15D0F3A0FF7007831A7 /* kinect.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = kinect.jar; path = build/Debug/kinect.jar; sourceTree = "<group>"; };
+		89D0F1860F3A2442007831A7 /* JavaVM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaVM.framework; path = /System/Library/Frameworks/JavaVM.framework; sourceTree = "<absolute>"; };
+		89D0F1BE0F3B68AD007831A7 /* GenericApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = GenericApp.icns; path = /System/Library/Frameworks/JavaVM.framework/Versions/A/Resources/GenericApp.icns; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89D0F04E0F393AD9007831A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D0F0850F394066007831A7 /* JavaNativeFoundation.framework in Frameworks */,
+				89D0F1870F3A2442007831A7 /* JavaVM.framework in Frameworks */,
+				16766F5E12A48EFD0088F80B /* libfreenect.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89D0F1860F3A2442007831A7 /* JavaVM.framework */,
+				89D0F0840F394066007831A7 /* JavaNativeFoundation.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		16766DA612A4637D0088F80B /* libfreenect */ = {
+			isa = PBXGroup;
+			children = (
+				16766DA912A464050088F80B /* libfreenect.h */,
+				16766F5D12A48EFD0088F80B /* libfreenect.dylib */,
+			);
+			name = libfreenect;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89D0F15D0F3A0FF7007831A7 /* kinect.jar */,
+				167670E012A4951F0088F80B /* libkinect.jnilib */,
+				1676718012A496820088F80B /* Kinect.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Kinect */ = {
+			isa = PBXGroup;
+			children = (
+				89D0F0260F392F48007831A7 /* Source */,
+				89D0F0200F392F20007831A7 /* Resources */,
+				89D0F1390F3948A9007831A7 /* make */,
+				89B60E390F414E1200C86CA9 /* lib */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = Kinect;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16766DA612A4637D0088F80B /* libfreenect */,
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		89D0F0200F392F20007831A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89D0F0230F392F20007831A7 /* Info.plist */,
+				89D0F0210F392F20007831A7 /* InfoPlist.strings */,
+				89B60E380F414DDB00C86CA9 /* Manifest */,
+				89D0F03E0F39304A007831A7 /* JavaApplicationStub */,
+				89D0F1BE0F3B68AD007831A7 /* GenericApp.icns */,
+			);
+			name = Resources;
+			path = resources;
+			sourceTree = "<group>";
+		};
+		89D0F0260F392F48007831A7 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				89D0F0290F392F56007831A7 /* java */,
+				89D0F0280F392F48007831A7 /* native */,
+			);
+			name = Source;
+			path = src;
+			sourceTree = "<group>";
+		};
+		89D0F0280F392F48007831A7 /* native */ = {
+			isa = PBXGroup;
+			children = (
+				16766E8812A47E800088F80B /* Kinect.h */,
+				16766E8912A47E800088F80B /* Kinect.mm */,
+			);
+			path = native;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		89D0F04C0F393AD9007831A7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16766DAA12A464050088F80B /* libfreenect.h in Headers */,
+				16766E8A12A47E800088F80B /* Kinect.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXLegacyTarget section */
+		89D0F0480F393A6F007831A7 /* Compile Java */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-e -f \"${SRCROOT}/make/build.xml\" -debug \"$ACTION\"";
+			buildConfigurationList = 89D0F04B0F393AB7007831A7 /* Build configuration list for PBXLegacyTarget "Compile Java" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/ant;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "Compile Java";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Compile Java";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		89D0F04F0F393AD9007831A7 /* Compile Native */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89D0F0530F393AF8007831A7 /* Build configuration list for PBXNativeTarget "Compile Native" */;
+			buildPhases = (
+				89D0F1360F394748007831A7 /* Run javah */,
+				89D0F04C0F393AD9007831A7 /* Headers */,
+				89D0F04D0F393AD9007831A7 /* Sources */,
+				89D0F04E0F393AD9007831A7 /* Frameworks */,
+				1676718912A496970088F80B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Compile Native";
+			productName = "Compile Native";
+			productReference = 167670E012A4951F0088F80B /* libkinect.jnilib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		8D1107260486CEB800E47090 /* Assemble Application */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Assemble Application" */;
+			buildPhases = (
+				89D0F0440F393070007831A7 /* Copy Executable */,
+				89D0F11F0F394189007831A7 /* Copy Java Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Assemble Application";
+			productInstallPath = "$(HOME)/Applications";
+			productName = Kinect;
+			productReference = 1676718012A496820088F80B /* Kinect.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Kinect" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Kinect */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89D0F1C90F3B704E007831A7 /* Kinect */,
+				89D0F0480F393A6F007831A7 /* Compile Java */,
+				89D0F04F0F393AD9007831A7 /* Compile Native */,
+				8D1107260486CEB800E47090 /* Assemble Application */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1676718912A496970088F80B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89D0F1360F394748007831A7 /* Run javah */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run javah";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# find the jar file to dig into\nJAR_TO_JAVAH=\"${BUILT_PRODUCTS_DIR}/kinect.jar\"\n\n# use a helper script to list all classes inside the jar, and all classes referenced by those classes\nCLASS_LIST=`\"${SRCROOT}/make/find-classrefs.sh\" \"${JAR_TO_JAVAH}\" | xargs`\n\n# run javah for all classes inside the jar, and all classes referenced by those classes\njavah -verbose -jni -classpath \"${JAR_TO_JAVAH}\" -d \"${DERIVED_SOURCES_DIR}\" ${CLASS_LIST}";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89D0F04D0F393AD9007831A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16766E8B12A47E800088F80B /* Kinect.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89D0F1CF0F3B7062007831A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89D0F04F0F393AD9007831A7 /* Compile Native */;
+			targetProxy = 89D0F1CE0F3B7062007831A7 /* PBXContainerItemProxy */;
+		};
+		89D0F1D10F3B7062007831A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89D0F0480F393A6F007831A7 /* Compile Java */;
+			targetProxy = 89D0F1D00F3B7062007831A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89D0F0210F392F20007831A7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89D0F0220F392F20007831A7 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89D0F0490F393A6F007831A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = kinect;
+			};
+			name = Debug;
+		};
+		89D0F04A0F393A6F007831A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = kinect;
+			};
+			name = Release;
+		};
+		89D0F0510F393ADA007831A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = jnilib;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/Frameworks/JavaVM.framework/Versions/A/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(PROJECT_DIR)",
+					"\"$(SYSTEM_LIBRARY_DIR)/Frameworks/JavaVM.framework/Headers\"",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../src/kinect/libfreenect/build/lib\"",
+					"\"$(SRCROOT)/lib\"",
+					"\"$(SDKROOT)/usr/local/lib/fakenect\"",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Kinect;
+			};
+			name = Debug;
+		};
+		89D0F0520F393ADA007831A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = jnilib;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_LIBRARY_DIR)/Frameworks/JavaVM.framework/Versions/A/Frameworks\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(PROJECT_DIR)",
+					"\"$(SYSTEM_LIBRARY_DIR)/Frameworks/JavaVM.framework/Headers\"",
+				);
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../src/kinect/libfreenect/build/lib\"",
+					"\"$(SRCROOT)/lib\"",
+					"\"$(SDKROOT)/usr/local/lib/fakenect\"",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = kinect;
+			};
+			name = Release;
+		};
+		89D0F1CA0F3B704F007831A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Kinect;
+			};
+			name = Debug;
+		};
+		89D0F1CB0F3B704F007831A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Kinect;
+			};
+			name = Release;
+		};
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Kinect;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Kinect;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_64_BIT_PRE_XCODE_3_1 = x86_64;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(PROJECT_DIR)",
+				);
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(PROJECT_DIR)",
+				);
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89D0F04B0F393AB7007831A7 /* Build configuration list for PBXLegacyTarget "Compile Java" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D0F0490F393A6F007831A7 /* Debug */,
+				89D0F04A0F393A6F007831A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89D0F0530F393AF8007831A7 /* Build configuration list for PBXNativeTarget "Compile Native" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D0F0510F393ADA007831A7 /* Debug */,
+				89D0F0520F393ADA007831A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89D0F1D20F3B7080007831A7 /* Build configuration list for PBXAggregateTarget "Kinect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D0F1CA0F3B704F007831A7 /* Debug */,
+				89D0F1CB0F3B704F007831A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Assemble Application" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Kinect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
