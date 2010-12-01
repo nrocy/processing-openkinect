@@ -18,6 +18,4 @@
 	freenect_device *dev;
 }
 
--(void)makeRed;
-
 @end

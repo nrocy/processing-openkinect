@@ -26,7 +26,6 @@
 		16766E8A12A47E800088F80B /* Kinect.h in Headers */ = {isa = PBXBuildFile; fileRef = 16766E8812A47E800088F80B /* Kinect.h */; };
 		16766E8B12A47E800088F80B /* Kinect.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16766E8912A47E800088F80B /* Kinect.mm */; };
 		16766F5E12A48EFD0088F80B /* libfreenect.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16766F5D12A48EFD0088F80B /* libfreenect.dylib */; };
-		89D0F0410F39306C007831A7 /* JavaApplicationStub in Copy Executable */ = {isa = PBXBuildFile; fileRef = 89D0F03E0F39304A007831A7 /* JavaApplicationStub */; };
 		89D0F0850F394066007831A7 /* JavaNativeFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D0F0840F394066007831A7 /* JavaNativeFoundation.framework */; };
 		89D0F16A0F3A124E007831A7 /* kinect.jar in Copy Java Resources */ = {isa = PBXBuildFile; fileRef = 89D0F15D0F3A0FF7007831A7 /* kinect.jar */; };
 		89D0F1870F3A2442007831A7 /* JavaVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D0F1860F3A2442007831A7 /* JavaVM.framework */; };
@@ -56,7 +55,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				89D0F0410F39306C007831A7 /* JavaApplicationStub in Copy Executable */,
 			);
 			name = "Copy Executable";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,19 +78,15 @@
 		16766E8912A47E800088F80B /* Kinect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Kinect.mm; sourceTree = "<group>"; };
 		16766F5D12A48EFD0088F80B /* libfreenect.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreenect.dylib; path = usr/local/lib/fakenect/libfreenect.dylib; sourceTree = SDKROOT; };
 		167670E012A4951F0088F80B /* libkinect.jnilib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libkinect.jnilib; sourceTree = BUILT_PRODUCTS_DIR; };
-		1676718012A496820088F80B /* Kinect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1676718012A496820088F80B /* Kinect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Kinect.app; path = /Users/nroc/Projects/Kinect/build/Release/Kinect.app; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		89B60E380F414DDB00C86CA9 /* Manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Manifest; path = "Library/Xcode/Project Templates/Java/JNI Application/resources/Manifest"; sourceTree = DEVELOPER_DIR; };
 		89B60E390F414E1200C86CA9 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = "Library/Xcode/Project Templates/Java/JNI Application/lib"; sourceTree = DEVELOPER_DIR; };
-		89D0F0220F392F20007831A7 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		89D0F0230F392F20007831A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89D0F0290F392F56007831A7 /* java */ = {isa = PBXFileReference; lastKnownFileType = folder; path = java; sourceTree = "<group>"; };
-		89D0F03E0F39304A007831A7 /* JavaApplicationStub */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = JavaApplicationStub; path = /System/Library/Frameworks/JavaVM.framework/Versions/A/Resources/MacOS/JavaApplicationStub; sourceTree = "<absolute>"; };
 		89D0F0840F394066007831A7 /* JavaNativeFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaNativeFoundation.framework; path = /System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaNativeFoundation.framework; sourceTree = "<absolute>"; };
 		89D0F1390F3948A9007831A7 /* make */ = {isa = PBXFileReference; lastKnownFileType = folder; path = make; sourceTree = "<group>"; };
 		89D0F15D0F3A0FF7007831A7 /* kinect.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = kinect.jar; path = build/Debug/kinect.jar; sourceTree = "<group>"; };
 		89D0F1860F3A2442007831A7 /* JavaVM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaVM.framework; path = /System/Library/Frameworks/JavaVM.framework; sourceTree = "<absolute>"; };
-		89D0F1BE0F3B68AD007831A7 /* GenericApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = GenericApp.icns; path = /System/Library/Frameworks/JavaVM.framework/Versions/A/Resources/GenericApp.icns; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +134,6 @@
 			children = (
 				89D0F15D0F3A0FF7007831A7 /* kinect.jar */,
 				167670E012A4951F0088F80B /* libkinect.jnilib */,
-				1676718012A496820088F80B /* Kinect.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,11 +164,7 @@
 		89D0F0200F392F20007831A7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				89D0F0230F392F20007831A7 /* Info.plist */,
-				89D0F0210F392F20007831A7 /* InfoPlist.strings */,
 				89B60E380F414DDB00C86CA9 /* Manifest */,
-				89D0F03E0F39304A007831A7 /* JavaApplicationStub */,
-				89D0F1BE0F3B68AD007831A7 /* GenericApp.icns */,
 			);
 			name = Resources;
 			path = resources;
@@ -338,17 +327,6 @@
 			targetProxy = 89D0F1D00F3B7062007831A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		89D0F0210F392F20007831A7 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				89D0F0220F392F20007831A7 /* English */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		89D0F0490F393A6F007831A7 /* Debug */ = {
