@@ -11,11 +11,10 @@
 
 #include "king_kinect_NativeKinect.h"
 
-#include "libfreenect.h"
+#include <libfreenect/libfreenect.h>
+#include <pthread.h>
 
 @interface Kinect : NSObject {
-	freenect_context *ctx;
-	freenect_device *dev;
 }
 
 @end
