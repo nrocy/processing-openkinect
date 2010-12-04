@@ -23,8 +23,6 @@
 
 /* Begin PBXBuildFile section */
 		164EDD8F12A60658000D14D0 /* Manifest in Resources */ = {isa = PBXBuildFile; fileRef = 164EDD8E12A60658000D14D0 /* Manifest */; };
-		164EE31112AAB165000D14D0 /* libfreenect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 164EE31012AAB165000D14D0 /* libfreenect.a */; };
-		164EE32312AAB2B9000D14D0 /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 164EE32212AAB2B9000D14D0 /* libusb-1.0.a */; };
 		164EE3F512AAB869000D14D0 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164EE3F412AAB869000D14D0 /* IOKit.framework */; };
 		16766E8A12A47E800088F80B /* Kinect.h in Headers */ = {isa = PBXBuildFile; fileRef = 16766E8812A47E800088F80B /* Kinect.h */; };
 		16766E8B12A47E800088F80B /* Kinect.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16766E8912A47E800088F80B /* Kinect.mm */; };
@@ -51,8 +49,6 @@
 
 /* Begin PBXFileReference section */
 		164EDD8E12A60658000D14D0 /* Manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Manifest; sourceTree = "<group>"; };
-		164EE31012AAB165000D14D0 /* libfreenect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreenect.a; path = lib/libfreenect.a; sourceTree = "<group>"; };
-		164EE32212AAB2B9000D14D0 /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libusb-1.0.a"; path = "lib/libusb-1.0.a"; sourceTree = "<group>"; };
 		164EE3F412AAB869000D14D0 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		16766E8812A47E800088F80B /* Kinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kinect.h; sourceTree = "<group>"; };
 		16766E8912A47E800088F80B /* Kinect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Kinect.mm; sourceTree = "<group>"; };
@@ -72,8 +68,6 @@
 			files = (
 				89D0F0850F394066007831A7 /* JavaNativeFoundation.framework in Frameworks */,
 				89D0F1870F3A2442007831A7 /* JavaVM.framework in Frameworks */,
-				164EE31112AAB165000D14D0 /* libfreenect.a in Frameworks */,
-				164EE32312AAB2B9000D14D0 /* libusb-1.0.a in Frameworks */,
 				164EE3F512AAB869000D14D0 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,8 +103,6 @@
 				89D0F0840F394066007831A7 /* JavaNativeFoundation.framework */,
 				164EE3F412AAB869000D14D0 /* IOKit.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
-				164EE31012AAB165000D14D0 /* libfreenect.a */,
-				164EE32212AAB2B9000D14D0 /* libusb-1.0.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -357,6 +349,8 @@
 					Foundation,
 					"-framework",
 					AppKit,
+					lib/libfreenect.a,
+					"lib/libusb-1.0.a",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = kinect;
