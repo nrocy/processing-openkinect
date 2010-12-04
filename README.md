@@ -47,10 +47,9 @@ NativeKinect.setLed(int) - _change the Kinect LED colour (0-6)_
 
 ### Build Requirements:
 
-Processing on OSX doesn't support 64-bit, so build the libraries as 32-bit.
+Prebuilt 32-bit libraries are included, so no external deps.
 
-- libusb built as per libfreenect instructions (as a 32-bit library)
-- libfreenect (built as a 32-bit library)
+- Xcode
 
 ### Build Instructions:
 
@@ -58,7 +57,6 @@ Coming soon.
 
 ### TODO:
 
-- Add prebuilt Processing library with all dependencies
 - Implement motor control methods
 - Implement accelerometer methods
 - Remove OSX/XCode specific dependencies
