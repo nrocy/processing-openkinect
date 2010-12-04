@@ -2,6 +2,10 @@
 
 Currently OSX only, please feel free to help remove that dependency.
 
+### Screenshot Porn
+
+![Screenshot](http://nrocy.github.com/images/processing_screenshot.jpg)
+
 ### Methods available:
 
 NativeKinect.init() - _initialize the Kinect_<br />
