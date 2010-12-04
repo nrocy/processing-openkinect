@@ -5,7 +5,7 @@ PImage img, depth;
 
 void setup()
 {
-  size(640, 480);
+  size(1280, 480);
   
   NativeKinect.init();
   NativeKinect.start();
@@ -22,7 +22,7 @@ void draw()
 
   depth.pixels = NativeKinect.getDepthMap();
   depth.updatePixels();
-  image(depth,640,0,320,240);
+  image(depth,640,0,640,480);
 }
 
 
