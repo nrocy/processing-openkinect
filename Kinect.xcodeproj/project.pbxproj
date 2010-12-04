@@ -23,7 +23,9 @@
 
 /* Begin PBXBuildFile section */
 		164EDD8F12A60658000D14D0 /* Manifest in Resources */ = {isa = PBXBuildFile; fileRef = 164EDD8E12A60658000D14D0 /* Manifest */; };
-		164EDEBD12A9690A000D14D0 /* libfreenect.0.0.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 164EDEAC12A96884000D14D0 /* libfreenect.0.0.1.dylib */; };
+		164EE31112AAB165000D14D0 /* libfreenect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 164EE31012AAB165000D14D0 /* libfreenect.a */; };
+		164EE32312AAB2B9000D14D0 /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 164EE32212AAB2B9000D14D0 /* libusb-1.0.a */; };
+		164EE3F512AAB869000D14D0 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164EE3F412AAB869000D14D0 /* IOKit.framework */; };
 		16766E8A12A47E800088F80B /* Kinect.h in Headers */ = {isa = PBXBuildFile; fileRef = 16766E8812A47E800088F80B /* Kinect.h */; };
 		16766E8B12A47E800088F80B /* Kinect.mm in Sources */ = {isa = PBXBuildFile; fileRef = 16766E8912A47E800088F80B /* Kinect.mm */; };
 		89D0F0850F394066007831A7 /* JavaNativeFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D0F0840F394066007831A7 /* JavaNativeFoundation.framework */; };
@@ -49,7 +51,9 @@
 
 /* Begin PBXFileReference section */
 		164EDD8E12A60658000D14D0 /* Manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Manifest; sourceTree = "<group>"; };
-		164EDEAC12A96884000D14D0 /* libfreenect.0.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreenect.0.0.1.dylib; path = /usr/local/lib/libfreenect.0.0.1.dylib; sourceTree = "<absolute>"; };
+		164EE31012AAB165000D14D0 /* libfreenect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreenect.a; path = lib/libfreenect.a; sourceTree = "<group>"; };
+		164EE32212AAB2B9000D14D0 /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libusb-1.0.a"; path = "lib/libusb-1.0.a"; sourceTree = "<group>"; };
+		164EE3F412AAB869000D14D0 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		16766E8812A47E800088F80B /* Kinect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kinect.h; sourceTree = "<group>"; };
 		16766E8912A47E800088F80B /* Kinect.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Kinect.mm; sourceTree = "<group>"; };
 		167670E012A4951F0088F80B /* libkinect.jnilib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libkinect.jnilib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,38 +72,15 @@
 			files = (
 				89D0F0850F394066007831A7 /* JavaNativeFoundation.framework in Frameworks */,
 				89D0F1870F3A2442007831A7 /* JavaVM.framework in Frameworks */,
-				164EDEBD12A9690A000D14D0 /* libfreenect.0.0.1.dylib in Frameworks */,
+				164EE31112AAB165000D14D0 /* libfreenect.a in Frameworks */,
+				164EE32312AAB2B9000D14D0 /* libusb-1.0.a in Frameworks */,
+				164EE3F512AAB869000D14D0 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				89D0F1860F3A2442007831A7 /* JavaVM.framework */,
-				89D0F0840F394066007831A7 /* JavaNativeFoundation.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		16766DA612A4637D0088F80B /* libfreenect */ = {
-			isa = PBXGroup;
-			children = (
-				164EDEAC12A96884000D14D0 /* libfreenect.0.0.1.dylib */,
-			);
-			name = libfreenect;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,9 +105,12 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				16766DA612A4637D0088F80B /* libfreenect */,
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+				89D0F1860F3A2442007831A7 /* JavaVM.framework */,
+				89D0F0840F394066007831A7 /* JavaNativeFoundation.framework */,
+				164EE3F412AAB869000D14D0 /* IOKit.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				164EE31012AAB165000D14D0 /* libfreenect.a */,
+				164EE32212AAB2B9000D14D0 /* libusb-1.0.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -360,13 +344,15 @@
 					"$(PROJECT_DIR)",
 					"\"$(SYSTEM_LIBRARY_DIR)/Frameworks/JavaVM.framework/Headers\"",
 				);
-				INSTALL_PATH = /usr/local/lib;
+				INSTALL_PATH = "";
+				LD_DYLIB_INSTALL_NAME = "$(EXECUTABLE_PATH)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/lib,
 					"\"$(SRCROOT)/lib\"",
 				);
 				OTHER_LDFLAGS = (
+					"-W1",
+					"-search_paths_first",
 					"-framework",
 					Foundation,
 					"-framework",
