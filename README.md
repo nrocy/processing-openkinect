@@ -62,6 +62,7 @@ Coming soon.
 
 ### TODO:
 
+- More error checking
 - Implement motor control methods
 - Implement accelerometer methods
 - Remove OSX/XCode specific dependencies
