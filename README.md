@@ -1,4 +1,4 @@
-## OpenKinect library for Processing
+# OpenKinect library for Processing
 
 Currently OSX only, please feel free to help remove that dependency.
 
