@@ -54,7 +54,7 @@ Coming soon.
 
 ### TODO:
 
-- Add prebuild Processing library with all dependencies
+- Add prebuilt Processing library with all dependencies
 - Implement motor control methods
 - Implement accelerometer methods
 - Remove OSX/XCode specific dependencies
