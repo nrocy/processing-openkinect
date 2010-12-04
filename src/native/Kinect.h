@@ -7,9 +7,8 @@
 //
 
 #include <JavaNativeFoundation/JavaNativeFoundation.h>
+#include <pthread.h>
 
 #include "king_kinect_NativeKinect.h"
-
-#include <libfreenect/libfreenect.h>
-#include <pthread.h>
+#include <libfreenect/libfreenect.h>git re
 
