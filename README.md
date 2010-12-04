@@ -43,8 +43,10 @@ NativeKinect.setLed(int) - _change the Kinect LED colour (0-6)_
 
 ### Build Requirements:
 
+Processing on OSX doesn't support 64-bit, so build the libraries as 32-bit.
+
 - libusb built as per libfreenect instructions (as a 32-bit library)
-- libfreenect built as a (32-bit library)
+- libfreenect (built as a 32-bit library)
 
 ### Build Instructions:
 
