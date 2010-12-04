@@ -337,13 +337,7 @@
 				);
 				INSTALL_PATH = "";
 				LD_DYLIB_INSTALL_NAME = "$(EXECUTABLE_PATH)";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/lib\"",
-				);
 				OTHER_LDFLAGS = (
-					"-W1",
-					"-search_paths_first",
 					"-framework",
 					Foundation,
 					"-framework",
