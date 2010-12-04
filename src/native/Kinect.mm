@@ -6,9 +6,7 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "Kinect.h"
-
-@implementation Kinect
+#include "Kinect.h"
 
 static freenect_context *ctx = nil;
 static freenect_device *dev = nil;
@@ -17,9 +15,10 @@ static int device_number = 0;
 static uint8_t *rgb_buf = nil;
 static uint16_t *depth_buf = nil;
 static pthread_t freenect_thread;
+static freenect_video_format current_format = FREENECT_VIDEO_RGB;
 
 void *freenect_threadfunc(void *arg) {
-	freenect_set_video_format(dev, FREENECT_VIDEO_RGB);
+	freenect_set_video_format(dev, current_format);
 	freenect_set_depth_format(dev, FREENECT_DEPTH_11BIT);
 
 	freenect_set_video_buffer(dev, rgb_buf);
@@ -33,42 +32,57 @@ void *freenect_threadfunc(void *arg) {
 	return NULL;
 }
 
+JNIEXPORT void JNICALL Java_king_kinect_NativeKinect_setVideoRGBNative(JNIEnv *, jclass)
+{
+	current_format = FREENECT_VIDEO_RGB;
+}
+
+JNIEXPORT void JNICALL Java_king_kinect_NativeKinect_setVideoIRNative(JNIEnv *, jclass)
+{
+	current_format = FREENECT_VIDEO_IR_8BIT;
+}
+
+JNIEXPORT void JNICALL Java_king_kinect_NativeKinect_startNative(JNIEnv *, jclass)
+{
+	if(current_format == FREENECT_VIDEO_RGB )
+		rgb_buf = (uint8_t *)malloc(FREENECT_VIDEO_RGB_SIZE);
+	else
+		rgb_buf = (uint8_t *)malloc(FREENECT_VIDEO_IR_8BIT_SIZE);
+	
+	depth_buf = (uint16_t *)malloc(FREENECT_DEPTH_11BIT_SIZE);
+	
+	if(pthread_create(&freenect_thread, NULL, freenect_threadfunc, NULL)) {
+		fprintf(stderr,"ERR: pthread_create failed.\n");
+	}	
+}
+
 JNIEXPORT jboolean JNICALL Java_king_kinect_NativeKinect_initNative(JNIEnv *, jclass)
 {
 	if(!ctx) 
 		if( freenect_init(&ctx, NULL) < 0 ) {
-			NSLog(@"Failed to init libfreenect");
-			return NO;
+			fprintf(stderr,"Failed to init libfreenect\n");
+			return false;
 		}
 		
 		int num_devices = freenect_num_devices(ctx);
-		NSLog(@"Found %d device(s)", num_devices);
+		fprintf(stderr, "Found %d device(s)\n", num_devices);
 	
 		if( !dev && num_devices > 0 ) {
 			if( freenect_open_device(ctx, &dev, device_number) < 0 ) {
-				NSLog(@"Couldn't open device %d", device_number);
-				return NO;
+				fprintf(stderr, "Couldn't open device %d\n", device_number);
+				return false;
 			}
 			else {
-				NSLog(@"Device %d initialised", device_number);
+				fprintf(stderr, "Device %d initialised\n", device_number);
 			}
 
-			rgb_buf = (uint8_t *)malloc(FREENECT_VIDEO_RGB_SIZE);
-			depth_buf = (uint16_t *)malloc(FREENECT_DEPTH_11BIT_SIZE);
-			
-			if(pthread_create(&freenect_thread, NULL, freenect_threadfunc, NULL)) {
-				NSLog(@"pthread_create failed.");
-				return NO;
-			}
-			
-			NSLog(@"Init finished");
-
-			return YES; 
+			return true; 
 		}
 
-	return NO;
+	return false;
 }
 
+// TODO: This can be removed once the algorithm for getVideo is updated to the correct-endianness (school boy error)
 uint32_t flip( uint32_t d ) {
 	uint8_t b1,b2,b3,b4;
 
@@ -80,7 +94,8 @@ uint32_t flip( uint32_t d ) {
 	return (b4 << 24) + (b3 << 16) + (b2 << 8) + b1;
 }
 
-JNIEXPORT jintArray JNICALL Java_king_kinect_NativeKinect_getVideoNative(JNIEnv *env, jclass, jintArray buf)
+// TODO: Should really have a mutex around update/read buffers
+JNIEXPORT void JNICALL Java_king_kinect_NativeKinect_getVideoNative(JNIEnv *env, jclass, jintArray buf)
 {
 	jboolean is_copy = JNI_FALSE;
 	jint *data = env->GetIntArrayElements(buf,&is_copy);
@@ -89,43 +104,41 @@ JNIEXPORT jintArray JNICALL Java_king_kinect_NativeKinect_getVideoNative(JNIEnv 
 	uint32_t rem1, rem2;
 	
 	int inofs = 0, outofs = 0;
-	 
-	while( inofs < FREENECT_FRAME_PIX )
-	{
-		d = ((uint32_t*)rgb_buf)[outofs++];
-		d = flip(d);
-		
-		rem1 = d & 0xff;
-		d = d >> 8;
-		data[inofs++] = 0xff000000 | d;
-		
-		d = ((uint32_t*)rgb_buf)[outofs++];
-		d = flip(d);
-
-		rem2 = d & 0xffff;
-		d = d >> 16;
-		data[inofs++] = 0xff000000 | (rem1 << 16) | d; 
-
-		d = ((uint32_t*)rgb_buf)[outofs++];
-		d = flip(d);
-		
-		data[inofs++] = 0xff000000 | (rem2 << 8) | (d >> 24);
-		data[inofs++] = 0xff000000 | d;
-	}
 	
-	/*
-	for(int i = 0 ; i < FREENECT_FRAME_PIX ; i++) {
-		int j = i*3;
-		data[i] = (0xff << 24) + (rgb_buf[j] << 16) + (rgb_buf[j+1] << 8) + (rgb_buf[j+2]);
+	if(current_format == FREENECT_VIDEO_RGB ) {
+		while( inofs < FREENECT_FRAME_PIX )	{
+			d = ((uint32_t*)rgb_buf)[outofs++];
+			d = flip(d);
+			
+			rem1 = d & 0xff;
+			d = d >> 8;
+			data[inofs++] = 0xff000000 | d;
+			
+			d = ((uint32_t*)rgb_buf)[outofs++];
+			d = flip(d);
+
+			rem2 = d & 0xffff;
+			d = d >> 16;
+			data[inofs++] = 0xff000000 | (rem1 << 16) | d; 
+
+			d = ((uint32_t*)rgb_buf)[outofs++];
+			d = flip(d);
+			
+			data[inofs++] = 0xff000000 | (rem2 << 8) | (d >> 24);
+			data[inofs++] = 0xff000000 | d;
+		}
+	} else {
+		for( int i = 0 ; i < FREENECT_FRAME_PIX ; i++ ) {
+			d = ((uint8_t*)rgb_buf)[i];
+			data[i] = d;
+			data[i] = 0xff000000 | (d << 16) | (d << 8) | d;
+		}
 	}
-	*/
 	 
 	env->ReleaseIntArrayElements(buf,data,0);
-	
-	return buf;
 }
 
-JNIEXPORT jintArray JNICALL Java_king_kinect_NativeKinect_getDepthNative(JNIEnv *env, jclass, jintArray buf)
+JNIEXPORT void JNICALL Java_king_kinect_NativeKinect_getDepthMapNative(JNIEnv *env, jclass, jintArray buf)
 {
 	jboolean is_copy = JNI_FALSE;
 	jint *data = env->GetIntArrayElements(buf,&is_copy);
@@ -139,13 +152,9 @@ JNIEXPORT jintArray JNICALL Java_king_kinect_NativeKinect_getDepthNative(JNIEnv 
 	}
 	
 	env->ReleaseIntArrayElements(buf,data,0);
-	
-	return buf;
 }
 
 JNIEXPORT void JNICALL Java_king_kinect_NativeKinect_setLedNative(JNIEnv *, jclass, jint color)
 {
 	freenect_set_led(dev, (freenect_led_options)color);
 }
-		   
-@end

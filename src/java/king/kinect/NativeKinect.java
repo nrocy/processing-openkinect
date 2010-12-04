@@ -10,22 +10,25 @@ public class NativeKinect
 	
 	private static native boolean initNative();
 	private static native void setLedNative(int color);
-	private static native int[] getVideoNative(int[] buf);
-	private static native int[] getDepthNative(int[] buf);
+	private static native void getVideoNative(int[] buf);
+	private static native void getDepthMapNative(int[] buf);
+	private static native void disposeNative();
+	private static native void setVideoRGBNative();
+	private static native void setVideoIRNative();	
+	private static native void startNative();
 	
 	private static int[] rgb;
-	private static int[] depth;
+	private static int[] depthMap;
 	
 	public static boolean init()
 	{
 		boolean success = false;
 		
 		if( (success = initNative()) ) {
+			rgb = new int[640*480];
+			depthMap = new int[640*480];
 		}
 
-		rgb = new int[640*480];
-		depth = new int[640*480];
-		
 		return success;
 	}
 	
@@ -34,11 +37,29 @@ public class NativeKinect
 	}
 	
 	public static int[] getVideo() {
-		return getVideoNative(rgb);
+		getVideoNative(rgb);
+		return rgb;
 	}
 	
-	public static int[] getDepth() {
-		return getDepthNative(depth);
+	public static int[] getDepthMap() {
+		getDepthMapNative(depthMap);
+		return depthMap;
+	}
+
+	public static void setVideoRGB() {
+		setVideoRGBNative();
+	}
+	
+	public static void setVideoIR() {
+		setVideoIRNative();
+	}
+	
+	public static void start() {
+		startNative();
+	}
+	
+	public void dispose() {
+		disposeNative();
 	}
 	
 }

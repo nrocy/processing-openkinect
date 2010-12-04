@@ -6,15 +6,10 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-#import <JavaNativeFoundation/JavaNativeFoundation.h>
+#include <JavaNativeFoundation/JavaNativeFoundation.h>
 
 #include "king_kinect_NativeKinect.h"
 
 #include <libfreenect/libfreenect.h>
 #include <pthread.h>
 
-@interface Kinect : NSObject {
-}
-
-@end
