@@ -10,5 +10,5 @@
 #include <pthread.h>
 
 #include "king_kinect_NativeKinect.h"
-#include <libfreenect/libfreenect.h>git re
+#include <libfreenect/libfreenect.h>
 
