@@ -24,10 +24,10 @@ public class NativeKinect
 	{
 		boolean success = false;
 		
-		if( (success = initNative()) ) {
-			rgb = new int[640*480];
-			depthMap = new int[640*480];
-		}
+		success = initNative();
+
+		rgb = new int[640*480];
+		depthMap = new int[640*480];
 
 		return success;
 	}

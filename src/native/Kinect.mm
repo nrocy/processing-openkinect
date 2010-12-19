@@ -11,6 +11,7 @@
 static freenect_context *ctx = nil;
 static freenect_device *dev = nil;
 static int device_number = 0;
+static int num_devices = 0;
 
 static uint8_t *rgb_buf = nil;
 static uint16_t *depth_buf = nil;
@@ -18,17 +19,18 @@ static pthread_t freenect_thread;
 static freenect_video_format current_format = FREENECT_VIDEO_RGB;
 
 void *freenect_threadfunc(void *arg) {
-	freenect_set_video_format(dev, current_format);
-	freenect_set_depth_format(dev, FREENECT_DEPTH_11BIT);
+	if( num_devices > 0 ) {
+		freenect_set_video_format(dev, current_format);
+		freenect_set_depth_format(dev, FREENECT_DEPTH_11BIT);
 
-	freenect_set_video_buffer(dev, rgb_buf);
-	freenect_set_depth_buffer(dev, depth_buf);
-	
-	freenect_start_video(dev);
-	freenect_start_depth(dev);
-	
-	while(freenect_process_events(ctx) >= 0) {}
-
+		freenect_set_video_buffer(dev, rgb_buf);
+		freenect_set_depth_buffer(dev, depth_buf);
+		
+		freenect_start_video(dev);
+		freenect_start_depth(dev);
+		
+		while(freenect_process_events(ctx) >= 0) {}
+	}
 	return NULL;
 }
 
@@ -64,7 +66,7 @@ JNIEXPORT jboolean JNICALL Java_king_kinect_NativeKinect_initNative(JNIEnv *, jc
 			return false;
 		}
 		
-		int num_devices = freenect_num_devices(ctx);
+		num_devices = freenect_num_devices(ctx);
 		fprintf(stderr, "Found %d device(s)\n", num_devices);
 	
 		if( !dev && num_devices > 0 ) {
@@ -143,9 +145,13 @@ JNIEXPORT void JNICALL Java_king_kinect_NativeKinect_getDepthMapNative(JNIEnv *e
 	jboolean is_copy = JNI_FALSE;
 	jint *data = env->GetIntArrayElements(buf,&is_copy);
 	
-	uint32_t ds = 0;
+	uint32_t ds = 0;	
 	for(int i = 0 ; i < FREENECT_FRAME_PIX ; i++ ) {
 		ds = depth_buf[i];
+		// Experimental bodge to avoid dbz
+		if( ds == 2048 )
+			ds = 2047;
+		
 		ds = ((2048 * 256) / (2048 - ds)) & 0xff;
 		ds = 256 - ds;
 		data[i] = 0xff000000 | (ds << 16) | (ds << 8) | ds;
