@@ -4,8 +4,10 @@ Currently OSX only, please feel free to help remove that dependency.
 
 ### Gimme the binary already! (Updated 19 Dec 2010)
 
-If you don't care for building from source, you can grab a zip of the library
-here: [http://nrocy.github.com/files/kinect20101219.zip](http://nrocy.github.com/files/kinect20101219.zip)
+If you don't care for building from source, there are a couple of downloads available.
+
+10.6 - Snow leopard: [http://nrocy.github.com/files/kinect20101222.zip](http://nrocy.github.com/files/kinect20101222.zip)
+10.5 - Leopard: [http://nrocy.github.com/files/kinect20101222_leopard.zip](http://nrocy.github.com/files/kinect20101222_leopard.zip)
 
 ### Screenshot Porn
 
