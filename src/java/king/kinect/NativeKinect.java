@@ -12,6 +12,7 @@ public class NativeKinect
 	private static native void setLedNative(int color);
 	private static native void getVideoNative(int[] buf);
 	private static native void getDepthMapNative(int[] buf);
+	private static native void getDepthMapRawNative(short[] buf);
 	private static native void disposeNative();
 	private static native void setVideoRGBNative();
 	private static native void setVideoIRNative();	
@@ -19,6 +20,7 @@ public class NativeKinect
 	
 	private static int[] rgb;
 	private static int[] depthMap;
+	private static short[] depthMapRaw;
 	
 	public static boolean init()
 	{
@@ -28,6 +30,7 @@ public class NativeKinect
 
 		rgb = new int[640*480];
 		depthMap = new int[640*480];
+		depthMapRaw = new short[640*480];
 
 		return success;
 	}
@@ -44,6 +47,11 @@ public class NativeKinect
 	public static int[] getDepthMap() {
 		getDepthMapNative(depthMap);
 		return depthMap;
+	}
+
+	public static short[] getDepthMapRaw() {
+		getDepthMapRawNative(depthMapRaw);
+		return depthMapRaw;
 	}
 
 	public static void setVideoRGB() {

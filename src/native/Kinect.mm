@@ -160,6 +160,14 @@ JNIEXPORT void JNICALL Java_king_kinect_NativeKinect_getDepthMapNative(JNIEnv *e
 	env->ReleaseIntArrayElements(buf,data,0);
 }
 
+JNIEXPORT void JNICALL Java_king_kinect_NativeKinect_getDepthMapRawNative(JNIEnv *env, jclass, jshortArray buf)
+{
+	jboolean is_copy = JNI_FALSE;
+	jshort *data = env->GetShortArrayElements(buf,&is_copy);
+	memcpy(data, depth_buf, FREENECT_DEPTH_11BIT_SIZE);
+	env->ReleaseShortArrayElements(buf,data,0);
+}
+
 JNIEXPORT void JNICALL Java_king_kinect_NativeKinect_setLedNative(JNIEnv *, jclass, jint color)
 {
 	freenect_set_led(dev, (freenect_led_options)color);
