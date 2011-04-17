@@ -8,15 +8,15 @@ If you don't care for building from source, there are a couple of downloads avai
 
 17 Apr 2011
 
-	10.6 - Snow leopard: [http://nrocy.github.com/files/kinect20110417.zip](http://nrocy.github.com/files/kinect20110417.zip)
+10.6 - Snow leopard: [http://nrocy.github.com/files/kinect20110417.zip](http://nrocy.github.com/files/kinect20110417.zip)
 
-	10.5 - Leopard: [http://nrocy.github.com/files/kinect20110417_leopard.zip](http://nrocy.github.com/files/kinect20110417_leopard.zip)
+10.5 - Leopard: [http://nrocy.github.com/files/kinect20110417_leopard.zip](http://nrocy.github.com/files/kinect20110417_leopard.zip)
 
 19 Dec 2010
 
-	10.6 - Snow leopard: [http://nrocy.github.com/files/kinect20101222.zip](http://nrocy.github.com/files/kinect20101222.zip)
+10.6 - Snow leopard: [http://nrocy.github.com/files/kinect20101222.zip](http://nrocy.github.com/files/kinect20101222.zip)
 
-	10.5 - Leopard: [http://nrocy.github.com/files/kinect20101222_leopard.zip](http://nrocy.github.com/files/kinect20101222_leopard.zip)
+10.5 - Leopard: [http://nrocy.github.com/files/kinect20101222_leopard.zip](http://nrocy.github.com/files/kinect20101222_leopard.zip)
 
 ### Screenshot Porn
 
